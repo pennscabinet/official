@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penn's Cabinet — Cards, Comics &amp; Collectibles</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announcement-bar">
+    <p>Free shipping on orders over $50 &mdash; <a href="#shop">Shop Now</a></p>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="/" class="logo">
+        <span class="logo-icon">&#9670;</span>
+        <span class="logo-text">Penn's Cabinet</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#comics">Comics &amp; Figures</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="icon-btn account-btn" aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+      <ul>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#comics">Comics &amp; Figures</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Cards &bull; Comics &bull; Collectibles</p>
+      <h1 class="hero-title">Curate Your<br>Collection</h1>
+      <p class="hero-subtitle">Trading cards, comics, action figures &amp; collectibles — hand-picked for collectors who know what they're after.</p>
+      <div class="hero-actions">
+        <a href="#shop" class="btn btn-primary">Browse the Shop</a>
+        <a href="#collections" class="btn btn-outline">View Collections</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED CATEGORIES ===== -->
+  <section class="categories" id="shop">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Browse</span>
+        <h2>Shop by Category</h2>
+      </div>
+      <div class="category-grid">
+        <a href="#" class="category-card" id="cards">
+          <div class="category-img" style="--hue: 45;">
+            <span class="category-icon">&#127183;</span>
+          </div>
+          <h3>Trading Cards</h3>
+          <p>Singles, booster packs &amp; graded slabs</p>
+        </a>
+        <a href="#" class="category-card" id="comics">
+          <div class="category-img" style="--hue: 200;">
+            <span class="category-icon">&#128214;</span>
+          </div>
+          <h3>Comics</h3>
+          <p>Key issues, runs &amp; collected editions</p>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-img" style="--hue: 350;">
+            <span class="category-icon">&#129351;</span>
+          </div>
+          <h3>Action Figures</h3>
+          <p>Vintage, modern &amp; sealed in box</p>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-img" style="--hue: 280;">
+            <span class="category-icon">&#128230;</span>
+          </div>
+          <h3>Sealed Product</h3>
+          <p>Booster boxes, bundles &amp; cases</p>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-img" style="--hue: 25;">
+            <span class="category-icon">&#9733;</span>
+          </div>
+          <h3>Graded &amp; Slabbed</h3>
+          <p>PSA, BGS &amp; CGC certified</p>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-img" style="--hue: 140;">
+            <span class="category-icon">&#9878;</span>
+          </div>
+          <h3>Accessories</h3>
+          <p>Sleeves, top-loaders, binders &amp; displays</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCTS (placeholder grid) ===== -->
+  <section class="featured" id="collections">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Featured</span>
+        <h2>Latest Arrivals</h2>
+        <p class="section-desc">Fresh pulls, new issues &amp; just-unboxed figures — updated weekly.</p>
+      </div>
+      <div class="product-grid" id="product-grid">
+        <!-- JS will populate placeholder cards here -->
+      </div>
+      <div class="section-footer">
+        <a href="#" class="btn btn-outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE BANNER ===== -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <span>New Stock Weekly &#9670;</span>
+      <span>Cards &bull; Comics &bull; Figures &#9670;</span>
+      <span>Free Shipping Over $50 &#9670;</span>
+      <span>Authenticity Guaranteed &#9670;</span>
+      <span>New Stock Weekly &#9670;</span>
+      <span>Cards &bull; Comics &bull; Figures &#9670;</span>
+      <span>Free Shipping Over $50 &#9670;</span>
+      <span>Authenticity Guaranteed &#9670;</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / TRUST ===== -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <span class="section-tag">Our Story</span>
+        <h2>Collectors Serving Collectors</h2>
+        <p>Penn's Cabinet started the way every good collection does — one obsession at a time. Cards on the kitchen table turned into long boxes in the closet, which turned into shelves of figures we couldn't stop hunting down.</p>
+        <p>We built this shop for people like us: collectors who care about condition, authenticity, and fair pricing. Every card is hand-inspected, every comic is bagged and boarded, and every figure is verified before it ships.</p>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <div class="trust-icon">&#128274;</div>
+          <h4>Secure Checkout</h4>
+          <p>Powered by Shopify</p>
+        </div>
+        <div class="trust-badge">
+          <div class="trust-icon">&#10003;</div>
+          <h4>Verified Authentic</h4>
+          <p>Every item inspected</p>
+        </div>
+        <div class="trust-badge">
+          <div class="trust-icon">&#128666;</div>
+          <h4>Fast Shipping</h4>
+          <p>Orders ship in 1-2 days</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="newsletter" id="contact">
+    <div class="container newsletter-inner">
+      <div class="newsletter-text">
+        <span class="section-tag">Stay in the Loop</span>
+        <h2>Get Drop Alerts &amp; Deals</h2>
+        <p>Be the first to know when rare cards, key issues &amp; sought-after figures hit the shop. No spam — just the good stuff.</p>
+      </div>
+      <div class="newsletter-form-wrap">
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" aria-label="Email address">
+          <button class="btn btn-primary" type="button">Subscribe</button>
+        </div>
+        <p class="form-note">Unsubscribe anytime. We respect your inbox.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <span class="logo-icon">&#9670;</span>
+          <span class="logo-text">Penn's Cabinet</span>
+        </a>
+        <p>Cards, comics &amp; collectibles for every kind of collector.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Trading Cards</a></li>
+          <li><a href="#">Comics</a></li>
+          <li><a href="#">Action Figures</a></li>
+          <li><a href="#">Graded &amp; Slabbed</a></li>
+          <li><a href="#">Sealed Product</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns &amp; Refunds</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter / X</a></li>
+          <li><a href="#">Discord</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 Penn's Cabinet. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SEARCH OVERLAY ===== -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-inner">
+      <input type="text" placeholder="Search cards, comics, figures…" class="search-input" id="search-input">
+      <button class="search-close" aria-label="Close search">&times;</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
