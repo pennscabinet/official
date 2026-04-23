@@ -60,20 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'Trading Cards',
       price: 249.99,
       badge: 'Hot',
-      emoji: '🔥',
     },
     {
       title: 'Amazing Spider-Man #300',
       category: 'Comics',
       price: 389.00,
       badge: 'Key Issue',
-      emoji: '🕷️',
     },
     {
       title: 'Vintage He-Man Figure (MOC)',
       category: 'Action Figures',
       price: 145.00,
-      emoji: '⚔️',
     },
     {
       title: 'PSA 10 Pikachu VMAX',
@@ -81,46 +78,39 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 189.00,
       oldPrice: 225.00,
       badge: 'Sale',
-      emoji: '⚡',
     },
     {
       title: 'Scarlet & Violet Booster Box',
       category: 'Sealed Product',
       price: 129.99,
-      emoji: '📦',
     },
     {
       title: 'Uncanny X-Men #141 (CGC 7.5)',
       category: 'Comics — Graded',
       price: 520.00,
       badge: 'Rare',
-      emoji: '📖',
     },
     {
       title: 'Star Wars Black Series Boba Fett',
       category: 'Action Figures',
       price: 34.99,
-      emoji: '🚀',
     },
     {
       title: 'BGS 9.5 Lugia Neo Genesis',
       category: 'Graded Cards',
       price: 549.00,
       badge: 'Rare',
-      emoji: '🌊',
     },
     {
       title: 'Japanese Vintage Booster Pack',
       category: 'Sealed Product',
       price: 79.99,
-      emoji: '🇯🇵',
     },
     {
       title: 'TMNT #1 (First Print)',
       category: 'Comics',
       price: 1250.00,
       badge: 'Grail',
-      emoji: '🐢',
     },
     {
       title: 'Marvel Legends Retro Wave Set',
@@ -128,13 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 89.99,
       oldPrice: 109.99,
       badge: 'Sale',
-      emoji: '🦸',
     },
     {
       title: 'Premium Card Sleeves (100ct)',
       category: 'Accessories',
       price: 12.99,
-      emoji: '🛡️',
     },
   ];
 
@@ -146,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="product-card fade-in" style="transition-delay: ${i * 0.08}s">
         <div class="product-img">
           ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
-          <span>${p.emoji}</span>
         </div>
         <div class="product-info">
           <h3>${p.title}</h3>
