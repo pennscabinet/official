@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Card Shop Investment Plan</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0f0f0f; }
-    input[type="range"] { accent-color: #c9a44a; }
-  </style>
-</head>
-<body>
-  <div id="root"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
-  <script type="text/babel">
-const { useState } = React;
+import { useState } from "react";
 
 const COLORS = {
   bg: "#0f0f0f",
@@ -120,7 +102,7 @@ function Badge({ children, color }) {
   );
 }
 
-function CardShopBusinessPlan() {
+export default function CardShopBusinessPlan() {
   const [sellPrice, setSellPrice] = useState(43);
   const [boxCost, setBoxCost] = useState(560);
   const [shippingCost, setShippingCost] = useState(5.3);
@@ -1182,7 +1164,3 @@ function CardShopBusinessPlan() {
     </div>
   );
 }
-ReactDOM.createRoot(document.getElementById("root")).render(<CardShopBusinessPlan />);
-  </script>
-</body>
-</html>
