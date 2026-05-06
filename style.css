@@ -842,6 +842,190 @@ input { font: inherit; }
   transform: translateY(0);
 }
 
+/* ============================================
+   SUBPAGE STYLES (Cards / Comics / Figurines / Accessories)
+   ============================================ */
+
+/* Highlight active nav link */
+.nav-links a.active,
+.mobile-menu a.active {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.nav-links a.active::after { width: 100%; }
+
+/* --- PAGE HERO (smaller than home hero) --- */
+.page-hero {
+  position: relative;
+  padding: 5rem var(--gap) 3.5rem;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(184, 134, 11, 0.15) 0%, transparent 60%),
+    var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8860b' fill-opacity='0.05'%3E%3Cpath d='M30 0l30 30-30 30L0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.page-hero-eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.page-hero p {
+  font-size: 1.05rem;
+  color: var(--color-ink-soft);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* --- BREADCRUMB --- */
+.breadcrumb {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 1.25rem var(--gap) 0;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  color: var(--color-ink-soft);
+  transition: color var(--transition);
+}
+
+.breadcrumb a:hover { color: var(--color-accent); }
+
+.breadcrumb .sep {
+  color: var(--color-border);
+  font-weight: 600;
+}
+
+.breadcrumb .current {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+/* --- FILTER / SORT BAR --- */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0 1.75rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-count {
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+}
+
+.filter-count strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  padding: 0.55rem 2.25rem 0.55rem 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 0.85rem;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: border-color var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231A1612' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+}
+
+.filter-select:hover,
+.filter-select:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.filter-pill {
+  padding: 0.55rem 1rem;
+  border-radius: 100px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.filter-pill.active,
+.filter-pill:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-highlight);
+}
+
+/* --- CATEGORY PAGE PRODUCT GRID --- */
+.category-page {
+  padding: 3.5rem 0 6rem;
+}
+
+.category-page .product-grid {
+  margin-bottom: 2rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--color-ink-soft);
+  font-size: 1rem;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
   .category-grid { grid-template-columns: repeat(2, 1fr); }
