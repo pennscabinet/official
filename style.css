@@ -1,5 +1,5 @@
 /* ============================================
-   THE CARD PARLOUR — Main Stylesheet
+   PENN'S CABINET — Main Stylesheet
    ============================================ */
 
 /* --- CUSTOM PROPERTIES --- */
@@ -115,7 +115,7 @@ input { font: inherit; }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 .nav-links a {
