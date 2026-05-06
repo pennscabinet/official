@@ -99,15 +99,33 @@ input { font: inherit; }
 }
 
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
   white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
+/* Header horizontal lockup */
+.logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+  /* The PNG already has a transparent BG; this prevents any
+     parent line-height from inflating its container. */
+  user-select: none;
+}
+
+/* Footer / compact contexts — just the skull mark */
+.logo-img--mark {
+  height: 52px;
+}
+
+/* Legacy fallback styles (kept for the rare diamond-only render) */
 .logo-icon {
   color: var(--color-accent);
   font-size: 1.4rem;
