@@ -1,10 +1,11 @@
 /* ============================================
    PENN'S CABINET — Main Stylesheet
    ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap');
 
 /* --- CUSTOM PROPERTIES --- */
 :root {
-  /* Palette: warm cream, deep ink, antique gold */
+  /* Palette: warm cream, deep ink, antique gold, oxblood */
   --color-bg:        #F6F1EB;
   --color-bg-alt:    #EDE6DC;
   --color-surface:   #FFFFFF;
@@ -12,11 +13,14 @@
   --color-ink-soft:  #5C554B;
   --color-accent:    #B8860B;
   --color-accent-hover: #9A7209;
+  --color-accent-soft: rgba(184, 134, 11, 0.32);
+  --color-oxblood:   #7A2E1F;
   --color-border:    #D9D0C4;
   --color-highlight: #FFF8E7;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-display:     'Playfair Display', Georgia, serif;
+  --font-display-alt: 'IM Fell DW Pica', Georgia, serif;
+  --font-body:        'DM Sans', system-ui, sans-serif;
 
   --container-max: 1200px;
   --gap:           2rem;
@@ -157,6 +161,96 @@ input { font: inherit; }
 
 .nav-links a:hover::after { width: 100%; }
 
+/* --- DESKTOP DROPDOWN --- */
+.nav-links .has-dropdown {
+  position: relative;
+}
+
+.nav-links .has-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dropdown-caret {
+  font-size: 0.95em;
+  line-height: 1;
+  transform: translateY(1px);
+  transition: transform var(--transition);
+}
+
+.has-dropdown:hover .dropdown-caret,
+.has-dropdown:focus-within .dropdown-caret,
+.has-dropdown.open .dropdown-caret {
+  transform: translateY(1px) rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 240px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(26, 22, 18, 0.12);
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition), visibility 0s linear var(--transition);
+  z-index: 110;
+}
+
+/* Invisible hover bridge so the menu doesn't close in the gap */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.5rem;
+  height: 0.5rem;
+}
+
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown:focus-within .dropdown-menu,
+.has-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  transition: opacity var(--transition), transform var(--transition), visibility 0s;
+}
+
+.dropdown-menu li { width: 100%; }
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+}
+
+.dropdown-menu a::after { display: none; }
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+  background: var(--color-bg-alt);
+  color: var(--color-accent);
+  outline: none;
+}
+
+.dropdown-menu a.active {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -229,6 +323,22 @@ input { font: inherit; }
   border-bottom: 1px solid var(--color-border);
 }
 
+.mobile-menu-heading {
+  display: block;
+  padding: 0.75rem 0 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.mobile-submenu-item a {
+  padding-left: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 /* --- HERO --- */
 .hero {
   position: relative;
@@ -238,7 +348,7 @@ input { font: inherit; }
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  padding: 4rem var(--gap);
+  padding: 4rem var(--gap) 7rem;
 }
 
 .hero-bg {
@@ -258,12 +368,13 @@ input { font: inherit; }
 }
 
 .hero-eyebrow {
-  font-size: 0.85rem;
+  font-family: var(--font-display-alt);
+  font-size: 1.05rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   color: var(--color-accent);
   margin-bottom: 1.25rem;
-  font-weight: 600;
+  font-weight: 400;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 0.2s;
 }
@@ -301,8 +412,10 @@ input { font: inherit; }
 .hero-scroll-hint {
   position: absolute;
   bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -313,6 +426,11 @@ input { font: inherit; }
   color: var(--color-ink-soft);
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 1s;
+}
+
+/* Offset the trailing letter-spacing so the word visually centers above the line */
+.hero-scroll-hint > span {
+  text-indent: 0.15em;
 }
 
 .scroll-line {
@@ -365,17 +483,44 @@ input { font: inherit; }
   margin-bottom: 3rem;
 }
 
+/* Hand-engraved section ornament: hairline + ❖ + hairline */
+.section-header::before {
+  content: '❖';
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--color-accent);
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(184, 134, 11, 0.32) 12%,
+    rgba(184, 134, 11, 0.32) 42%,
+    transparent 42%,
+    transparent 58%,
+    rgba(184, 134, 11, 0.32) 58%,
+    rgba(184, 134, 11, 0.32) 88%,
+    transparent 100%
+  );
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .section-tag {
   display: inline-block;
-  font-size: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.42em;
   color: var(--color-accent);
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  border: 1px solid var(--color-accent);
-  padding: 0.3rem 1rem;
-  border-radius: 100px;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 0.85rem;
+  text-indent: 0.42em; /* counterweight for trailing letter-spacing */
 }
 
 .section-header h2 {
@@ -470,13 +615,31 @@ input { font: inherit; }
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-accent-soft);
   transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Inner hairline rule — vintage trade-card double frame */
+.product-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: calc(var(--radius-lg) - 5px);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .product-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(26, 22, 18, 0.1);
+}
+
+.product-card:hover::before {
+  border-color: rgba(184, 134, 11, 0.4);
 }
 
 .product-img {
@@ -502,23 +665,37 @@ input { font: inherit; }
   );
 }
 
+/* Letterpress-stamp style — overprinted on cream paper, oxblood ink, slight rotation */
 .product-badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  background: var(--color-accent);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
+  top: 14px;
+  left: 14px;
+  background: var(--color-bg-alt);
+  color: var(--color-oxblood);
+  border: 1px solid currentColor;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.25rem 0.6rem;
-  border-radius: 100px;
-  z-index: 1;
+  letter-spacing: 0.2em;
+  padding: 0.32rem 0.7rem 0.3rem 0.9rem;
+  border-radius: 2px;
+  transform: rotate(-4deg);
+  transform-origin: top left;
+  box-shadow: 1px 2px 0 rgba(26, 22, 18, 0.06);
+  text-shadow: 0.5px 0 0 currentColor; /* faint ink-soak */
+  z-index: 3;
 }
 
 .product-info {
   padding: 1.25rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info .product-price {
+  margin-top: auto;
 }
 
 .product-info h3 {
@@ -672,7 +849,6 @@ input { font: inherit; }
 }
 
 .newsletter-text .section-tag {
-  border-color: var(--color-accent);
   color: var(--color-accent);
 }
 
@@ -901,11 +1077,12 @@ input { font: inherit; }
 }
 
 .page-hero-eyebrow {
-  font-size: 0.85rem;
+  font-family: var(--font-display-alt);
+  font-size: 1.05rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   color: var(--color-accent);
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 
@@ -1059,7 +1236,8 @@ input { font: inherit; }
 
   .footer-grid { grid-template-columns: 1fr 1fr; }
 
-  .hero { min-height: 75vh; }
+  .hero { min-height: 75vh; padding-bottom: 5rem; }
+  .hero-scroll-hint { display: none; }
 }
 
 @media (max-width: 480px) {

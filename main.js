@@ -29,6 +29,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ---- Desktop dropdown toggle ----
+  // Hover/focus open the menu via CSS. This adds click + keyboard support
+  // for touch devices and screen readers.
+  const dropdownTriggers = document.querySelectorAll('.has-dropdown > a');
+
+  function closeAllDropdowns() {
+    document.querySelectorAll('.has-dropdown.open').forEach(li => {
+      li.classList.remove('open');
+      const trigger = li.querySelector(':scope > a');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      const li = trigger.parentElement;
+      // First click: open the dropdown without navigating.
+      // Second click (already open): let the link navigate normally.
+      if (!li.classList.contains('open')) {
+        e.preventDefault();
+        closeAllDropdowns();
+        li.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Click outside closes any open dropdown
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.has-dropdown')) closeAllDropdowns();
+  });
+
+  // Escape closes the dropdown and returns focus to its trigger
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    const openLi = document.querySelector('.has-dropdown.open');
+    if (!openLi) return;
+    const trigger = openLi.querySelector(':scope > a');
+    closeAllDropdowns();
+    if (trigger) trigger.focus();
+  });
+
   // ---- Search overlay ----
   const searchBtn     = document.querySelector('.search-btn');
   const searchOverlay = document.getElementById('search-overlay');
@@ -85,6 +127,26 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: 'NECA Predator (Ultimate)',       category: 'Action Figures',    filter: 'figurines',   price: 42.00 },
     { title: 'Hot Toys Iron Man Mark VII (1/6)', category: 'Premium Figures', filter: 'figurines',   price: 449.00,  badge: 'Premium' },
     { title: 'Sideshow Premium Format Hulk',   category: 'Premium Figures',   filter: 'figurines',   price: 899.00,  badge: 'Grail' },
+
+    // Video Games
+    { title: 'Super Mario Bros. 3 (NES, CIB)',         category: 'Retro',     filter: 'video-games', price: 189.00,  badge: 'Vintage' },
+    { title: 'The Legend of Zelda: Ocarina of Time (N64)', category: 'Retro', filter: 'video-games', price: 79.99 },
+    { title: 'Sonic the Hedgehog 2 (Genesis, Sealed)', category: 'Retro',     filter: 'video-games', price: 240.00,  badge: 'Sealed' },
+    { title: 'Chrono Trigger (SNES, Boxed)',           category: 'Retro',     filter: 'video-games', price: 425.00,  badge: 'Grail' },
+    { title: 'Elden Ring — Collector’s Edition (PS5)', category: 'Modern', filter: 'video-games', price: 219.99 },
+    { title: 'Hades II (Switch, Sealed)',              category: 'Modern',    filter: 'video-games', price: 49.99,   badge: 'New' },
+    { title: 'Nintendo Switch OLED — Tested',          category: 'Consoles',  filter: 'video-games', price: 289.00 },
+    { title: 'Sega Dreamcast Console (Refurbished)',   category: 'Consoles',  filter: 'video-games', price: 175.00,  oldPrice: 210.00, badge: 'Sale' },
+
+    // Tabletop & Board Games
+    { title: 'Catan (5th Edition)',                    category: 'Board Games', filter: 'tabletop',  price: 44.99 },
+    { title: 'Wingspan + Oceania Expansion',           category: 'Board Games', filter: 'tabletop',  price: 79.99,   badge: 'Bundle' },
+    { title: 'Gloomhaven: Jaws of the Lion',           category: 'Board Games', filter: 'tabletop',  price: 49.99 },
+    { title: 'Ticket to Ride: Europe',                 category: 'Board Games', filter: 'tabletop',  price: 54.99 },
+    { title: 'D&D Player’s Handbook (2024)',      category: 'RPGs',        filter: 'tabletop',  price: 49.99,   badge: 'New' },
+    { title: 'Pathfinder 2e Core Rulebook (Remaster)', category: 'RPGs',        filter: 'tabletop',  price: 59.99 },
+    { title: 'Warhammer 40K: Combat Patrol — Space Marines', category: 'Miniatures', filter: 'tabletop', price: 165.00, badge: 'Premium' },
+    { title: 'Reaper Bones Painted Mini Set (12pc)',   category: 'Miniatures',  filter: 'tabletop',  price: 89.00 },
 
     // Accessories
     { title: 'Premium Card Sleeves (100ct)',   category: 'Accessories',       filter: 'accessories', price: 12.99 },

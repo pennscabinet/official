@@ -29,11 +29,18 @@
         <img src="logo/png/web/horizontal-dark-1200.png" srcset="logo/png/web/horizontal-dark-800.png 1x, logo/png/web/horizontal-dark-1200.png 2x" alt="Penn's Cabinet" class="logo-img" width="200" height="75">
       </a>
       <ul class="nav-links">
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="subpages/cards.html">Cards</a></li>
-        <li><a href="subpages/comics.html">Comics</a></li>
-        <li><a href="subpages/figurines.html">Figurines</a></li>
-        <li><a href="subpages/accessories.html">Accessories</a></li>
+        <li class="has-dropdown">
+          <a href="#shop" aria-haspopup="true" aria-expanded="false">Shop <span class="dropdown-caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#shop">All Categories</a></li>
+            <li><a href="subpages/cards.html">Cards</a></li>
+            <li><a href="subpages/comics.html">Comics</a></li>
+            <li><a href="subpages/figurines.html">Figurines</a></li>
+            <li><a href="subpages/video-games.html">Video Games</a></li>
+            <li><a href="subpages/tabletop-games.html">Tabletop &amp; Board Games</a></li>
+            <li><a href="subpages/accessories.html">Accessories</a></li>
+          </ul>
+        </li>
         <li><a href="#collections">Collections</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -54,11 +61,14 @@
     <!-- Mobile menu -->
     <div class="mobile-menu">
       <ul>
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="subpages/cards.html">Cards</a></li>
-        <li><a href="subpages/comics.html">Comics</a></li>
-        <li><a href="subpages/figurines.html">Figurines</a></li>
-        <li><a href="subpages/accessories.html">Accessories</a></li>
+        <li><a href="#shop">Shop All</a></li>
+        <li><span class="mobile-menu-heading">Categories</span></li>
+        <li class="mobile-submenu-item"><a href="subpages/cards.html">Cards</a></li>
+        <li class="mobile-submenu-item"><a href="subpages/comics.html">Comics</a></li>
+        <li class="mobile-submenu-item"><a href="subpages/figurines.html">Figurines</a></li>
+        <li class="mobile-submenu-item"><a href="subpages/video-games.html">Video Games</a></li>
+        <li class="mobile-submenu-item"><a href="subpages/tabletop-games.html">Tabletop &amp; Board Games</a></li>
+        <li class="mobile-submenu-item"><a href="subpages/accessories.html">Accessories</a></li>
         <li><a href="#collections">Collections</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -70,9 +80,9 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Cards &bull; Comics &bull; Collectibles</p>
+      <p class="hero-eyebrow">Cards &bull; Comics &bull; Games &bull; Collectibles</p>
       <h1 class="hero-title">Curate Your<br>Collection</h1>
-      <p class="hero-subtitle">Trading cards, comics, action figures &amp; collectibles — hand-picked for collectors who know what they're after.</p>
+      <p class="hero-subtitle">Trading cards, comics, figurines, video games &amp; tabletop classics — hand-picked for collectors who know what they're after.</p>
       <div class="hero-actions">
         <a href="#shop" class="btn btn-primary">Browse the Shop</a>
         <a href="#collections" class="btn btn-outline">View Collections</a>
@@ -97,7 +107,7 @@
             <span class="category-icon"></span>
           </div>
           <h3>Trading Cards</h3>
-          <p>Singles, booster packs &amp; graded slabs</p>
+          <p>Singles, sealed product &amp; graded slabs</p>
         </a>
         <a href="subpages/comics.html" class="category-card" id="comics">
           <div class="category-img" style="--hue: 200;">
@@ -113,19 +123,19 @@
           <h3>Figurines</h3>
           <p>Vintage, modern &amp; sealed in box</p>
         </a>
-        <a href="subpages/cards.html" class="category-card">
+        <a href="subpages/video-games.html" class="category-card" id="video-games">
           <div class="category-img" style="--hue: 280;">
             <span class="category-icon"></span>
           </div>
-          <h3>Sealed Product</h3>
-          <p>Booster boxes, bundles &amp; cases</p>
+          <h3>Video Games</h3>
+          <p>Retro carts, modern titles &amp; consoles</p>
         </a>
-        <a href="subpages/cards.html" class="category-card">
+        <a href="subpages/tabletop-games.html" class="category-card" id="tabletop-games">
           <div class="category-img" style="--hue: 25;">
             <span class="category-icon"></span>
           </div>
-          <h3>Graded &amp; Slabbed</h3>
-          <p>PSA, BGS &amp; CGC certified</p>
+          <h3>Tabletop &amp; Board Games</h3>
+          <p>Board games, RPGs &amp; minis</p>
         </a>
         <a href="subpages/accessories.html" class="category-card" id="accessories">
           <div class="category-img" style="--hue: 140;">
@@ -159,11 +169,11 @@
   <section class="marquee-section">
     <div class="marquee-track">
       <span>New Stock Weekly &#9670;</span>
-      <span>Cards &bull; Comics &bull; Figures &#9670;</span>
+      <span>Cards &bull; Comics &bull; Games &bull; Figures &#9670;</span>
       <span>Free Shipping Over $50 &#9670;</span>
       <span>Authenticity Guaranteed &#9670;</span>
       <span>New Stock Weekly &#9670;</span>
-      <span>Cards &bull; Comics &bull; Figures &#9670;</span>
+      <span>Cards &bull; Comics &bull; Games &bull; Figures &#9670;</span>
       <span>Free Shipping Over $50 &#9670;</span>
       <span>Authenticity Guaranteed &#9670;</span>
     </div>
@@ -234,8 +244,8 @@
           <li><a href="subpages/cards.html">Trading Cards</a></li>
           <li><a href="subpages/comics.html">Comics</a></li>
           <li><a href="subpages/figurines.html">Figurines</a></li>
-          <li><a href="subpages/cards.html">Graded &amp; Slabbed</a></li>
-          <li><a href="subpages/cards.html">Sealed Product</a></li>
+          <li><a href="subpages/video-games.html">Video Games</a></li>
+          <li><a href="subpages/tabletop-games.html">Tabletop &amp; Board Games</a></li>
           <li><a href="subpages/accessories.html">Accessories</a></li>
         </ul>
       </div>
